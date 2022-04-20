@@ -7,20 +7,17 @@ import (
 )
 
 func main() {
-	BookClub := TheBookClub.Init()
 	engine := amber.New("./views", ".amber")
 
 	server := fiber.New(fiber.Config{
 		Views: engine,
 	})
 
-	server.Get("/", func(ctx *fiber.Ctx) error {
-		return ctx.Render("index", fiber.Map {
-			"Title": "Will likes poo",
+	server.Route("/TheBookClub", func(tbc fiber.Router) {
+		tbc.Get("/", func(ctx *fiber.Ctx) error {
+			return ctx.SendString("The Book Club!")
 		})
 	})
-
-	server.Mount("/TheBookClub", BookClub)
 	
 	server.Listen(":8080")
 }
