@@ -6,10 +6,16 @@ import (
 )
 
 func Init() *fiber.App {
-	app := fiber.New()
+	engine := amber.New("./views", ".amber")
+
+	app := fiber.New(fiber.Config{
+		Views: engine,
+	})
 
 	app.Get("/", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("Hello there!")
+		return ctx.Render("/TheBookClub/index", fiber.Map {
+			"Title": "The Book Club",
+		})
 	})
 
 	return app
