@@ -19,7 +19,5 @@ func main() {
 		})
 	})
 	
-	
-	
 	server.Listen(":8080")
 }
