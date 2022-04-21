@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/amber"
-	"tokorv.com/apps/TheBookClub"
+	"fmt"
 )
 
 func main() {
@@ -13,11 +13,7 @@ func main() {
 		Views: engine,
 	})
 
-	server.Route("/TheBookClub", func(tbc fiber.Router) {
-		tbc.Get("/", func(ctx *fiber.Ctx) error {
-			return ctx.SendString("The Book Club!")
-		})
-	})
+	server.Static("/static", "./public")
 	
 	server.Listen(":8080")
 }
