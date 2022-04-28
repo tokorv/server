@@ -13,4 +13,6 @@ jobs:
         username: will
         password: HighPavement92!
         port: 22
-        script: dir
+        script: | 
+          cd server,
+          dir
