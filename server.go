@@ -16,7 +16,6 @@ func main() {
 	server.Static("/static", "./public")
 
 	server.Get("/", func(ctx *fiber.Ctx) error {
-		fmt.Println("Will is keyboard-sexual")
 		return ctx.SendString("Hello, World!")
 	})
 	
