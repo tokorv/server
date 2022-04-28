@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/amber"
-	"fmt"
+	//"fmt"
 )
 
 func main() {
