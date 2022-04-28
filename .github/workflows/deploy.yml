@@ -18,4 +18,5 @@ jobs:
           cd home
           cd will
           cd server
-          git pull https://github.com/tokorv/server
+          cd server
+          git pull
