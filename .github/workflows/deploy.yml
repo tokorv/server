@@ -14,5 +14,8 @@ jobs:
         password: HighPavement92!
         port: 22
         script: | 
-          cd server,
-          dir
+          cd /
+          cd home
+          cd will
+          cd server
+          git pull https://github.com/tokorv/server
