@@ -9,11 +9,16 @@ import (
 func main() {
 	engine := amber.New("./views", ".amber")
 
-	server := fiber.New(fiber.Config{
+	server := fiber.New(fiber.Config{ 
 		Views: engine,
 	})
 
 	server.Static("/static", "./public")
+
+	server.Get("/", func(ctx *fiber.Ctx) error {
+		fmt.Println("Will is keyboard-sexual")
+		return ctx.SendString("Hello, World!")
+	})
 	
 	server.Listen(":8080")
 }
